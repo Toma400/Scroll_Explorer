@@ -1,6 +1,9 @@
-Title:       "Software"
-Description: "Blablabla...
-              ...blablabla"
+Title:       "Example Documentation"
+Description: "This example documentation is provided to you as tutorial how
+              to use Scroll Explorer. Feel free to open example.yaml file
+              and analyse its contents and how they adjust in software.
+              There will be also small guide separated in chapters, so you
+              can learn alongside viewing software features."
 
 Chapters:
   - Chapter 1:
