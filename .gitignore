@@ -1,5 +1,7 @@
 # -- GIT --
 /.git
+/.idea
+/__pycache__
 .gitattributes
 
 # -- ARCHIVE --

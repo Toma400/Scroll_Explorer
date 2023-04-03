@@ -7,17 +7,20 @@ def read_yaml():
         except yaml.YAMLError as exc:
             print(exc)
 
-cpath:  String = os.getcwd()
-yfiles: List   = []
+cpath:  str  = os.getcwd()
+yfiles: list = []
 
 # lists all files in current dir and /scrolls
 for yf in os.listdir(cpath):
-    yfiles.append(yf)
+    if ".yaml" in yf:
+        yfiles.append(yf)
 if os.path.exists(f"{cpath}/scrolls"):
     for yf in os.listdir(f"{cpath}/scrolls"):
-        yfiles.append(yf)
+        if ".yaml" in yf:
+            yfiles.append(yf)
 
 if yfiles:
     pass # main road of the file
+    print (yfiles)
 else:
     exit()
