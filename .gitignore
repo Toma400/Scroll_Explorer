@@ -6,5 +6,8 @@
 # -- ZIG --
 /zig-cache
 
+# -- PY --
+/__pycache__
+
 # -- ARCHIVE --
 /arv

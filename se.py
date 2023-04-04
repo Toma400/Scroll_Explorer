@@ -1,3 +1,5 @@
+from tkinter import *
+from tkinter import ttk
 import yaml, os
 
 def read_yaml(name: str):
@@ -18,13 +20,20 @@ class DocOpened:
 
 class Explore:
 
-    def __init__(self, files: list):
+    def __init__(self, files: list, uwindow):
+        self.window = uwindow
         self.files = files
         self.selec = 0
         self.dcop  = None
 
     def run(self):
+        temp_y = 0
+
         self.dcop = DocOpened(self.files[self.selec])
+        for file in self.files:
+            ttk.Label(window,  text=file.replace(".yaml", "")).grid(column=temp_y, row=0)
+            temp_y += 1
+        ttk.Button(window, text="Quit", command=self.window.destroy).grid(column=temp_y, row=0)
 
     def list_doc(self):
         pass #return self.files
@@ -33,6 +42,9 @@ class Explore:
         self.selec = self.files.index(name)
 
 # --------------------------------------------------
+program_init = Tk()
+window = ttk.Frame(program_init, padding=10)
+window.grid()
 cpath:  str  = os.getcwd()
 yfiles: list = []
 
@@ -46,7 +58,7 @@ if os.path.exists(f"{cpath}/scrolls"):
             yfiles.append(yf)
 
 if yfiles:
-    se = Explore(yfiles)
+    se = Explore(yfiles, program_init)
     se.run()
 else:
     exit()
